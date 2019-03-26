@@ -2,7 +2,7 @@ FROM php:7.3-cli-alpine
 
 MAINTAINER Nabil Muhammad Firdaus <123.nabil.dev@gmail.com>
 
-RUN apk --no-cache add shadow curl && \
+RUN apk --no-cache add shadow curl bash openssh && \
     groupmod -g 101 www-data && \
     usermod -u 100 -g 101 www-data && \
     apk del shadow
@@ -20,3 +20,5 @@ RUN composer global require friendsofphp/php-cs-fixer
 
 # Install PHP Lint
 RUN composer global require overtrue/phplint
+
+CMD ["/bin/bash"]
