@@ -24,7 +24,7 @@ RUN apk update --no-cache && apk add --update --no-cache --virtual .build-deps \
         ln -s /usr/local/share/yarn/bin/yarn /usr/local/bin/ && \
         ln -s /usr/local/share/yarn/bin/yarnpkg /usr/local/bin/ && \
         rm latest.tar.gz; \
-    && apk del .build-deps
+    && apk del .build-deps \
     && rm -rf \
         /tmp/* \
         /var/cache/apk/* \
