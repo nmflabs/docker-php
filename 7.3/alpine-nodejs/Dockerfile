@@ -8,6 +8,7 @@ RUN apk update --no-cache && apk add --update --no-cache --virtual .build-deps \
         build-base \
         linux-headers \
         gnupg \
+        tar \
         git \
         python \
     && cd /tmp \
