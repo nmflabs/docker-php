@@ -2,7 +2,12 @@ version: "3.7"
 
 services:
   php-7.3-cli-alpine:
-    image: nmfzone/php:7.3-cli-alpine
+    image: nmflabs/php:7.3-cli-alpine
     build:
       context: .
       dockerfile: 7.3/cli-alpine/Dockerfile
+  php-7.3-alpine-nodejs:
+    image: nmflabs/php:7.3-alpine-nodejs
+    build:
+      context: .
+      dockerfile: 7.3/alpine-nodejs/Dockerfile
