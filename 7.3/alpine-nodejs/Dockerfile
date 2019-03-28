@@ -42,7 +42,7 @@ RUN apk -U add curl \
         /usr/lib/node_modules/npm/man \
         /usr/lib/node_modules/npm/doc \
         /usr/lib/node_modules/npm/html \
-        /usr/share/man
+        /usr/share/man \
     && apk -U add yarn
 
 CMD ["/bin/bash"]
