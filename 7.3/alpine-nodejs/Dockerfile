@@ -8,11 +8,11 @@ RUN apk update --no-cache && apk add --update --no-cache --virtual .build-deps \
         build-base \
         linux-headers \
         gnupg \
-        tar \
         git \
         python \
     && cd /tmp \
-    && curl -sfSLO https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.gz | tar zxf - \
+    && curl -sfSLO https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.gz \
+    && tar -zxf node-v${NODE_VERSION}.tar.gz \
     && cd node-v$NODE_VERSION \
     && ./configure --prefix=/usr \
     && make -j1 && make install \
