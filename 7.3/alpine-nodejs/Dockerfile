@@ -10,6 +10,7 @@ RUN apk update --no-cache && apk add --update --no-cache --virtual .build-deps \
         gnupg \
         git \
         python \
+        paxctl \
     && cd /tmp \
     && curl -sfSLO https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION.tar.gz \
     && tar -zxf node-v${NODE_VERSION}.tar.gz \
