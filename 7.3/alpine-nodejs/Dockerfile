@@ -19,8 +19,8 @@ RUN apk update --no-cache && apk add --update --no-cache --virtual .build-deps \
     && make -j1 && make install \
     && paxctl -cm /usr/bin/node \
     && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --import && \
-        curl -sfSLO https://yarnpkg.com/latest.tar.gz && \
-        gpg --verify latest.tar.gz && \
+        curl -sfSL -O https://yarnpkg.com/latest.tar.gz -O https://yarnpkg.com/latest.tar.gz.asc && \
+        gpg --verify latest.tar.gz.asc && \
         mkdir /usr/local/share/yarn && \
         tar -xf latest.tar.gz -C /usr/local/share/yarn --strip 1 && \
         ln -s /usr/local/share/yarn/bin/yarn /usr/local/bin/ && \
