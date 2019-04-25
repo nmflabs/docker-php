@@ -14,6 +14,12 @@ RUN addgroup -g 1000 node \
         linux-headers \
         gnupg \
         python \
+    && apk add --update --no-cache \
+        # Need some tools to make node_modules dependencies work.
+        zlib-dev \
+        libc6-compat \
+        libjpeg-turbo-dev \
+        libpng-dev \
     && for key in \
         # NodeJs
         94AE36675C464D64BAFA68DD7434390BDBE9B9C5 \
