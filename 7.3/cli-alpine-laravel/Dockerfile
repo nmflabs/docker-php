@@ -27,6 +27,8 @@ RUN apk add --no-cache \
     \
     && docker-php-ext-configure \
         zip --with-libzip \
+    \
+    && docker-php-ext-configure \
         gd --with-gd \
             --with-jpeg-dir=/usr/include \
             --with-png-dir=/usr/include \
