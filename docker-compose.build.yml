@@ -11,3 +11,13 @@ services:
     build:
       context: .
       dockerfile: 7.3/alpine-nodejs/Dockerfile
+  php-7.3-cli-alpine-laravel:
+    image: nmflabs/php:7.3-cli-alpine-laravel
+    build:
+      context: .
+      dockerfile: 7.3/cli-alpine-laravel/Dockerfile
+  php-7.3-alpine-nodejs-laravel:
+    image: nmflabs/php:7.3-alpine-nodejs-laravel
+    build:
+      context: .
+      dockerfile: 7.3/alpine-nodejs-laravel/Dockerfile
