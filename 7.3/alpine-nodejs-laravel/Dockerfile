@@ -16,6 +16,8 @@ RUN addgroup -g 1000 node \
         python \
     && apk add --update --no-cache \
         # Need some tools to make node_modules dependencies work.
+        # Native Module need below, the first one.
+        make gcc g++ python \
         zlib-dev \
         libc6-compat \
         libjpeg-turbo-dev \
