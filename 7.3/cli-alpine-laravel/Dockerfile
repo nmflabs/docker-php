@@ -18,6 +18,7 @@ RUN apk add --no-cache \
         libjpeg-turbo-dev \
         freetype-dev \
         libpng-dev \
+        imagemagick-dev \
         jpegoptim \
         optipng \
         pngquant \
@@ -46,8 +47,13 @@ RUN apk add --no-cache \
         dom \
         gd \
     \
-    && pecl install -o -f redis \
+    && pecl install -o -f \
+        redis \
+        imagick \
     \
-    && docker-php-ext-enable redis \
+    && docker-php-ext-enable \
+        redis \
+        imagick \
     \
     && apk del --no-network .build-deps
+    && rm -rf /var/cache/apk/*
