@@ -55,5 +55,5 @@ RUN apk add --no-cache \
         redis \
         imagick \
     \
-    && apk del --no-network .build-deps
+    && apk del --no-network .build-deps \
     && rm -rf /var/cache/apk/*
